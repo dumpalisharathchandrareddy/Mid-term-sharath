@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.container{
+    background-color: rgb(206, 201, 201);
+    display: grid;
+    grid-template-columns: 4fr;
+    margin-top: 40px;
+}
+
+.mouth-open-mobile{
+    display: none;
+    height: 200px;
+    width: 150px;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 70px;
+    align-items: center;
+    padding: 60px 92px;
+    font-size: 1.1rem;
+    height: calc(100% - 120px);
+}
+
+.einstein-title{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.about-section p{
+   margin-bottom: 20px;
+   text-align: center;
+   font-size: 1.1rem;
+}
+
+.about-section-content h4{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-image-content{
+    height:100% ;
+    width:100%
+}
+
+.about-image-content img{
+    height: 60%;
+    width: 100%;
+    margin-top: 40%;
+}
+
+.content-wrapper{
+    height: 100vh;
+    overflow: auto;
+}
+
+.mouth-open-mobile-wrapper{
+    display: grid;
+    justify-content: center;
+}
+
+.navigation-bar{
+    display: grid;
+    align-items: center;
+    background-color:rgb(0, 0, 0);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navigation-bar ul {
+    display: contents;
+    gap: 10px;
+}
+
+.navigation-bar li {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navigation-bar button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 100%; /* Make the button take the full width */
+    padding: 10px; /* Add some padding for a better look */
+}
+
+.navigation-bar button:hover {
+  font: bold;
+  transform: scale(1.08);
+  border-color: red;
+}
+
+.selected-button {
+    background-color: rgb(16, 16, 0);
+    font: bold;
+    color: white;
+    font-size: 1.0rem;
+    padding: 6px;
+}
+
+.un-selected-button {
+    background-color: #EFEFEF;
+    color: black;
+    font-size: 1.0rem;
+    padding: 6px;
+}
+
+#gallery h2, #Publications h2, #Hobbies h2, #Blog h2{
+    margin-top: 10px;
+    text-align: center;
+    background-color:  rgba(99, 99, 102, 0.716);
+    font-size: 2rem;
+    padding: 20px;
+}
+
+#gallery, #Publications, #Hobbies, #Blog{
+    display: none;
+} 
+
+.gallery-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 120px 120px;
+}
+
+.gallery-section-row img{
+    border: 3px solid rgb(162, 243, 162);
+    border-radius: 20%;
+}
+
+.gallery-section-row{
+    text-align: center;
+}
+
+.literature-content {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout for the volume-group containers */
+    gap: 20px; /* Space between the volume groups */
+    padding: 120px 120px;
+
+}
+
+.volume-group{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns inside each volume group */
+    grid-template-rows: repeat(4, auto); /* 4 rows inside each volume group */
+    gap: 5px; /* Space between the items */
+}
+
+.entry-detail {
+    padding: 10px;
+    background-color: #b1abab;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px;
+}
+
+.einstein-activities {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 row, 2 columns layout */
+    padding: 116px;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .activity-detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 2 columns: 1 for image, 1 for text */
+    gap: 15px;
+    align-items: center; /* Vertically align items if needed */
+    border: 1px solid black;
+    background-color: #b1abab;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    padding: 30px;
+  }
+  
+  .activity-detail img {
+    width: 100%; /* Make images responsive */
+    height: 80%;
+    border-radius: 20px;
+  }
+
+  #Blog img{
+    width: 10%; /* Make images responsive */
+    height: 10%;
+    border-radius: 20px;
+  }
+
+  @media(max-width: 1165px){
+    .gallery-section{
+        grid-template-columns: 1fr;
+    }
+
+    .einstein-activities{
+        padding: 40px 60px;
+    }
+  }
+
+@media(max-width: 830px){
+    .about-section{
+        padding: 60px 60px;
+    }
+
+    .mouth-open-mobile{
+        display: block;
+    }
+
+    .about-image-content{
+        display: none;
+    }
+
+    .about-section{
+        grid-template-columns: 1fr;
+    }
+
+    .literature-content{
+        padding: 20px 40px;
+        gap: 10px;
+    }
+}
+
+  @media (max-width: 768px) {
+    .einstein-activities {
+      grid-template-columns: 1fr; /* Stacks the columns into one row on small screens */
+    }
+  
+    .activity-detail {
+      grid-template-columns: 1fr; /* Stacks image and text vertically on small screens */
+    }
+  }
+
+  @media(max-width: 600px){
+    .about-section p{
+        font-size: 0.8rem;
+    }
+
+    .navigation-bar button{
+        font-size: 1.0rem;
+        padding: 6px;
+    }
+
+    .entry-detail{
+        padding: 10px;
+        font-size: 12px;
+    }
+  }
+
+  @media(max-width: 430px){
+    .about-section{
+        padding: 20px 20px;
+    }
+
+    .gallery-section-row img{
+        width: 200px;
+    }
+
+    .literature-content {
+        padding: 10px 15px;
+    }
+
+    .einstein-activities{
+        padding: 15px 30px;
+    }
+
+    .einstein-activities {
+        padding: 20px 30px;
+    }
+  }
+  
